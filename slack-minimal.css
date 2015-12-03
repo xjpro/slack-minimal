@@ -1,0 +1,90 @@
+[ts-message] {
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	background-color: #414B57;
+}
+
+[ts-message].active:not(.standalone):not(.multi_delete_mode):not(.highlight),
+[ts-message]:hover:not(.standalone):not(.multi_delete_mode):not(.highlight) {
+	/* go away highlight */
+	background-color: #414B57;
+}
+
+[ts-message] .message_content {
+	/* make messages a little taller */
+	overflow: hidden;
+	line-height: 30px;
+}
+
+[ts-message] .message_content > .message_sender,
+[ts-message] .message_content > .message_body {
+	/* make pieces of a message be side to side */
+	display: block !important;
+	float: left !important;
+}
+
+[ts-message]:not(.first) .message_content > .message_sender {
+	/* don't show names on non-first messages */
+	opacity: 0;
+}
+
+[ts-message] .member_image {
+	/* baby gravatars */
+	width: 20px !important;
+	height: 20px !important;
+}
+
+[ts-message].first .message_gutter .message_icon {
+	margin-top: 0;
+}
+
+[ts-message] .message_gutter {
+	/* smaller gravatar section */
+	width: auto !important;
+	padding-left: 10px;
+}
+
+[ts-message] > .message_content > .message_sender,
+.light_theme [ts-message] .message_content .member {
+	/* sender moved out of flow and stuck to left side */
+	position: absolute;
+	left: 35px;
+	color: white !important;
+}
+
+[ts-message] .message_content {
+	/* push content away from sender a bit */
+	margin-left: 175px !important;
+	margin-top: 0 !important;
+	background-color: white;
+}
+
+[ts-message].first .message_content .timestamp {
+	/* timestamp on right */
+	position: absolute;
+	right: 20px;
+}
+
+[ts-message] .message_body {
+	/* make message body take up most of the space */
+	width: calc(100% - 175px);
+	padding-left: 10px;
+}
+
+[ts-message] .image_container,
+[ts-message] .file_container,
+[ts-message] .rxn_panel {
+	/* also padding for add-on things which get posted below messages */
+	padding-left: 10px !important;
+}
+
+[ts-message] .message_star_holder {
+	/* don't want these things */
+	display: none !important;
+}
+
+#msgs_div {
+	/* no padding on bottom of message list */
+	padding-bottom: 0;
+}
