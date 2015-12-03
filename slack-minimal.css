@@ -19,6 +19,12 @@ ts-message .message_content {
 	line-height: 30px;
 }
 
+ts-message.first .message_content {
+	/* light border for new message blocks */
+	border-top: 1px solid #eee;
+	box-sizing: border-box;
+}
+
 ts-message .message_content > .message_sender,
 ts-message .message_content > .message_body {
 	/* make pieces of a message be side to side */
@@ -66,6 +72,7 @@ ts-message .message_content {
 ts-message.first .message_content .timestamp {
 	/* timestamp on right */
 	position: absolute;
+	top: 5px;
 	right: 20px;
 }
 
