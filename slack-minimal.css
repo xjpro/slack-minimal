@@ -56,6 +56,7 @@ ts-message .message_gutter {
 	/* smaller gravatar section */
 	width: auto !important;
 	padding-left: 10px;
+	left: initial;
 }
 
 ts-message > .message_content > .message_sender,
