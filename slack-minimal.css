@@ -47,6 +47,11 @@ ts-message.first .message_gutter .message_icon {
 	margin-top: 0;
 }
 
+ts-message .action_hover_container {
+	top: 0 !important;
+	right: 80px;
+}
+
 ts-message .message_gutter {
 	/* smaller gravatar section */
 	width: auto !important;
@@ -69,16 +74,27 @@ ts-message .message_content {
 	background-color: white;
 }
 
-ts-message.first .message_content .timestamp {
+ts-message .message_content .timestamp {
 	/* timestamp on right */
 	position: absolute;
 	top: 5px;
-	right: 20px;
+	right: 25px;
+}
+
+ts-message:not(.first) .message_gutter {
+	position: absolute;
+	right: 6px;
+}
+
+ts-message.first .message_star_holder {
+	position: absolute;
+	top: -3px;
+	right: 15px;
 }
 
 ts-message .message_body {
 	/* make message body take up most of the space */
-	width: calc(100% - 175px);
+	width: calc(100% - 100px);
 	padding-left: 10px;
 }
 
@@ -89,7 +105,7 @@ ts-message .rxn_panel {
 	padding-left: 10px !important;
 }
 
-ts-message .message_star_holder {
+ts-message .things_we_dont_want {
 	/* don't want these things */
 	display: none !important;
 }
