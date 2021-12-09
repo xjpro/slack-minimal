@@ -1,131 +1,41 @@
-/* center pane */
-
-ts-message {
-	margin: 0;
-	padding: 0;
-	border-width: 0;
-	background-color: #414B57;
+/* Make user icons smaller */
+.c-message_kit__avatar, .c-message_kit__avatar img {
+  height: 24px !important;
+  width: 24px !important;;
 }
 
-ts-message.active:not(.standalone):not(.multi_delete_mode):not(.highlight),
-ts-message:hover:not(.standalone):not(.multi_delete_mode):not(.highlight) {
-	/* go away highlight */
-	background-color: #414B57;
+/* Remove sender box from the flow of the chats, this allows it to be on the left side always while the chats are 120px to the right */
+.c-message__sender {
+  position: absolute;
+  width: 120px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-ts-message .message_content {
-	/* make messages a little taller */
-	overflow: hidden;
-	line-height: 30px;
+/* Remove timestamp, would be nice to have but no good spot for it yet... */
+.c-timestamp {
+  display: none;
 }
 
-ts-message.first .message_content {
-	/* light border for new message blocks */
-	border-top: 1px solid #eee;
-	box-sizing: border-box;
+.c-message_kit__gutter {
+    padding: 2px 8px !important;
 }
 
-ts-message .message_content > .message_sender,
-ts-message .message_content > .message_body {
-	/* make pieces of a message be side to side */
-	display: block !important;
-	float: left !important;
+/* Use flex to get everything in a message to flow on the same line */
+.c-message_kit__gutter__right {
+    flex: 1 1 0;
+    display: flex;
+    padding: 0;
+    margin: 0;
 }
 
-ts-message:not(.first) .message_content > .message_sender {
-	/* don't show names on non-first messages */
-	opacity: 0;
+/* All message content pushes over 120 to give room for the message sender */
+.c-message_kit__blocks , .c-message_kit__reaction_bar , .c-message_kit__attachments, .c-files_container, .c-message__body  {
+    margin-left: 120px !important;
 }
 
-ts-message .member_image {
-	/* baby gravatars */
-	width: 20px !important;
-	height: 20px !important;
-}
-
-ts-message.first .message_gutter .message_icon {
-	margin-top: 0;
-}
-
-ts-message .action_hover_container {
-	top: 0 !important;
-	right: 80px;
-}
-
-ts-message .message_gutter {
-	/* smaller gravatar section */
-	width: auto !important;
-	padding-left: 10px;
-	left: initial;
-}
-
-ts-message > .message_content > .message_sender,
-.light_theme ts-message .message_content .member {
-	/* sender moved out of flow and stuck to left side */
-	position: absolute;
-	left: 35px;
-	color: white !important;
-	line-height: 30px;
-}
-
-ts-message .message_content {
-	/* push content away from sender a bit */
-	margin-left: 175px !important;
-	margin-top: 0 !important;
-	background-color: white;
-}
-
-ts-message .message_content .timestamp {
-	/* timestamp on right */
-	position: absolute;
-	top: 5px;
-	right: 25px;
-}
-
-ts-message:not(.first) .message_gutter {
-	position: absolute;
-	right: 6px;
-}
-
-ts-message.first .message_star_holder {
-	position: absolute;
-	top: -3px;
-	right: 15px;
-}
-
-ts-message .message_body {
-	/* make message body take up most of the space */
-	width: calc(100% - 100px);
-	padding-left: 10px;
-}
-
-ts-message .image_container,
-ts-message .file_container,
-ts-message .rxn_panel {
-	/* also padding for add-on things which get posted below messages */
-	padding-left: 10px !important;
-}
-
-ts-message .things_we_dont_want {
-	/* don't want these things */
-	display: none !important;
-}
-
-#msgs_div {
-	/* no padding on bottom of message list */
-	padding-bottom: 0;
-}
-
-/* right pane */
-
-#col_channels_bg {
-	background-color: #fff;
-}
-
-#client-ui.flex_pane_showing.details_showing #col_flex {
-	width: 250px;
-}
-
-#client-ui.flex_pane_showing.details_showing #messages_container {
-	margin-right: 250px;
+/* Restore image previewe size */
+.c-files_container {
+    display: block;
+    width: 100%;
 }
