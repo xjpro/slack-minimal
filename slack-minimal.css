@@ -25,16 +25,16 @@
 .c-message_kit__gutter__right {
     flex: 1 1 0;
     display: flex;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
 }
 
 /* All message content pushes over 120 to give room for the message sender */
 .c-message_kit__blocks, 
-/* .c-message_kit__reaction_bar,  */
-.c-message_kit__attachments, 
 .c-files_container, 
 .c-message__body, 
+.c-message_kit__attachments,
 .c-message_kit__text, 
 .c-message__broadcast_preamble_outer  {
     margin-left: 120px !important;
@@ -43,6 +43,7 @@
 .c-message_kit__reaction_bar {
     margin-left: 1rem !important;
 }
+
 
 /* Restore image preview size */
 .c-files_container {
